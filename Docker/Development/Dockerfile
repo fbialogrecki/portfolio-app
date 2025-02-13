@@ -11,9 +11,10 @@ COPY ../../package*.json ./
 # Install dependencies
 RUN yarn install
  
-# Copy the rest of your application files
-COPY ../../src/* .
- 
+# Copy the rest of your application files and chage to this directory
+COPY ../../src .
+
+RUN cd src
 # Expose the port your app runs on
 EXPOSE 3000
  
