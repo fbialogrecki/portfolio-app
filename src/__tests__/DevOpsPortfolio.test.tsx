@@ -6,7 +6,7 @@ describe('DevOpsPortfolio', () => {
   it('renders the main components', () => {
     render(<DevOpsPortfolio />);
 
-    expect(screen.getByText('Hi, I'm Filip Białogrecki')).toBeInTheDocument();
+    expect(screen.getByText("Hi, I'm Filip Białogrecki")).toBeInTheDocument();
     expect(screen.getByText('DevOps Engineer')).toBeInTheDocument();
     expect(screen.getByText('What I Do?')).toBeInTheDocument();
     expect(screen.getByText('My Work')).toBeInTheDocument();
