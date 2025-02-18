@@ -10,13 +10,15 @@ COPY public ./public
 RUN yarn run build
  
 # Production Stage
-FROM nginx:stable-alpine AS production
+FROM nginxinc/nginx-unprivileged:stable-alpine AS production
 COPY --from=build /app/build /usr/share/nginx/html
-RUN addgroup -S nginx && adduser -S -G nginx nginx
-RUN chown -R nginx:nginx /usr/share/nginx/html
-RUN chown -R nginx:nginx /var/log/nginx
+#RUN addgroup -S nginx
+#RUN adduser -S -G nginx nginx
+#RUN chown -R nginx:nginx /usr/share/nginx/html \
+#    && chown -R nginx:nginx /var/log/nginx \
+#    && chown -R nginx:nginx /var/cache/nginx
 USER nginx
-EXPOSE 80
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
 
 HEALTHCHECK --interval=30s --timeout=3s \
