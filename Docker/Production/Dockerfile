@@ -12,11 +12,6 @@ RUN yarn run build
 # Production Stage
 FROM nginxinc/nginx-unprivileged:stable-alpine AS production
 COPY --from=build /app/build /usr/share/nginx/html
-#RUN addgroup -S nginx
-#RUN adduser -S -G nginx nginx
-#RUN chown -R nginx:nginx /usr/share/nginx/html \
-#    && chown -R nginx:nginx /var/log/nginx \
-#    && chown -R nginx:nginx /var/cache/nginx
 USER nginx
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
