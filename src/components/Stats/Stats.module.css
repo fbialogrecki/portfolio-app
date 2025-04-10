@@ -1,0 +1,139 @@
+/* src/components/Stats/Stats.module.css */
+.statsSection {
+    padding: 60px 40px;
+    background-color: var(--background-dark);
+    /* Lub inny odcień */
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.contentWrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    /* Wyrównaj do góry */
+}
+
+.description {
+    flex: 1;
+    /* Zajmuje dostępną przestrzeń */
+}
+
+.description h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.description p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.statistics {
+    flex: 1;
+    /* Zajmuje dostępną przestrzeń */
+    display: flex;
+    flex-direction: column;
+    /* Statystyki jedna pod drugą */
+    align-items: flex-start;
+    /* Wyrównaj do lewej */
+    padding-left: 20px;
+    /* Dodaj trochę przestrzeni po lewej */
+}
+
+.statItem {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.statValue {
+    font-size: 2.8rem;
+    /* Duża liczba */
+    font-weight: bold;
+    color: var(--text-light);
+    display: block;
+    /* W nowej linii */
+    margin-bottom: 0px;
+    line-height: 1;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 8px;
+    /* Odstęp przed paskiem */
+}
+
+.statBar {
+    height: 4px;
+    /* Wysokość paska */
+    width: 80px;
+    /* Szerokość paska */
+    background-color: var(--primary-accent);
+    /* Kolor paska */
+    border-radius: 2px;
+}
+
+.techStackLabel {
+    margin-top: 10px;
+    /* Odstęp od ostatniej statystyki */
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .contentWrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .statsSection {
+        padding: 40px 20px;
+    }
+
+    .statistics {
+        padding-left: 0;
+        width: 100%;
+        /* Pełna szerokość na mobilnych */
+        flex-direction: row;
+        /* Statystyki obok siebie */
+        justify-content: space-around;
+        /* Rozłożenie */
+        flex-wrap: wrap;
+        /* Zawijanie */
+        gap: 20px;
+        /* Odstęp między statystykami */
+    }
+
+    .statItem {
+        margin-bottom: 10px;
+        /* Zmniejsz margines dolny */
+        text-align: center;
+        /* Wyśrodkuj na mobilnych */
+    }
+
+    .statValue {
+        font-size: 2.2rem;
+        /* Zmniejsz czcionkę */
+    }
+
+    .statBar {
+        margin: 0 auto;
+        /* Wyśrodkuj pasek */
+    }
+
+    .techStackLabel {
+        width: 100%;
+        /* Pełna szerokość */
+        text-align: center;
+        /* Wyśrodkowanie */
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,53 @@
+/* src/App.css */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #1a1a1a;
+    /* Ciemne tło */
+    color: #f0f0f0;
+    /* Jasny tekst */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Możesz tu zdefiniować zmienne CSS dla kolorów */
+:root {
+    --background-dark: #1a1a1a;
+    --text-light: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --primary-accent: #4a90e2;
+    /* Przykład koloru akcentu */
+    --card-background: #2a2a2a;
+}
+
+/* Prosty reset i podstawowe style */
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.button-primary {
+    background-color: var(--primary-accent);
+    color: white;
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
+    margin-left: 15px;
+}

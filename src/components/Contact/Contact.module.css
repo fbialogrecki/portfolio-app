@@ -1,0 +1,80 @@
+/* src/components/Contact/Contact.module.css */
+.contactSection {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #111;
+    /* Ciemniejsze tło dla sekcji contact/footer */
+    border-top: 1px solid #333;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 500px;
+    /* Ogranicz szerokość podtytułu */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Odstęp między ikonami */
+}
+
+.socialIcon {
+    color: var(--text-secondary);
+    font-size: 1.8rem;
+    /* Rozmiar ikony (dostosuj dla SVG/fontów) */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    /* Umożliwia transformację */
+    width: 40px;
+    /* Przykładowy rozmiar kontenera ikony */
+    height: 40px;
+    line-height: 40px;
+    /* Wyśrodkowanie tekstu placeholdera */
+    border: 1px solid var(--text-secondary);
+    /* Obramowanie jak na zdjęciu */
+    border-radius: 50%;
+    /* Okrągłe tło/ramka */
+}
+
+.socialIcon:hover {
+    color: var(--primary-accent);
+    /* Kolor akcentu przy najechaniu */
+    border-color: var(--primary-accent);
+    transform: translateY(-3px);
+    /* Lekkie uniesienie */
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .socialIcon {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .socialLinks {
+        gap: 20px;
+    }
+}

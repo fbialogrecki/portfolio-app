@@ -1,0 +1,190 @@
+/* src/components/PortfolioBuild/PortfolioBuild.module.css */
+.portfolioBuildSection {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    /* Wyśrodkowanie tytułu i podtytułu */
+}
+
+.portfolioBuildSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: flex-start;
+    /* Wyrównaj do góry */
+    gap: 40px;
+    /* Odstęp między obrazkiem a listą */
+    text-align: left;
+    /* Przywróć wyrównanie tekstu dla zawartości */
+}
+
+.imageContainer {
+    flex: 1;
+    /* Zajmuje dostępną przestrzeń */
+    min-width: 300px;
+    /* Minimalna szerokość kontenera obrazka */
+    height: 400px;
+    /* Stała wysokość dla kontenera obrazka */
+    background-color: var(--card-background);
+    /* Tło, gdy obrazek się ładuje lub go nie ma */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Ukryj części obrazka wychodzące poza kontener */
+    border-radius: 8px;
+    position: relative;
+    /* Potrzebne, jeśli używasz absolutnie pozycjonowanych obrazków do animacji */
+}
+
+.portfolioImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Skaluje obrazek, zachowując proporcje i wypełniając kontener */
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    /* Płynna zmiana przezroczystości */
+}
+
+/* Opcjonalnie: styl dla stanu ładowania lub braku obrazka */
+.portfolioImage:not([src]),
+.portfolioImage[src=""] {
+    opacity: 0;
+    /* Ukryj, jeśli nie ma src */
+}
+
+
+.stepsList {
+    flex: 1;
+    /* Zajmuje dostępną przestrzeń */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Dla linii czasowej */
+    padding-left: 25px;
+    /* Miejsce na kropki i linię */
+}
+
+/* Linia czasowa (opcjonalnie) */
+.stepsList::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    /* Pozycjonowanie linii */
+    top: 5px;
+    /* Start linii */
+    bottom: 5px;
+    /* Koniec linii */
+    width: 2px;
+    background-color: var(--text-secondary);
+}
+
+.stepItem {
+    margin-bottom: 25px;
+    /* Odstęp między krokami */
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    /* Dla pozycjonowania kropki */
+    transition: color 0.3s ease;
+}
+
+.stepItem:hover .stepContent p {
+    color: var(--text-light);
+    /* Rozjaśnij tekst przy najechaniu */
+}
+
+.timelineDot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    /* Wyrównanie z linią */
+    top: 5px;
+    /* Wyrównanie pionowe z tekstem */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+    /* Nad linią */
+}
+
+.stepContent {
+    margin-left: 10px;
+    /* Odstęp od kropki */
+}
+
+.stepContent p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    /* Domyślny kolor tekstu */
+    transition: color 0.3s ease;
+}
+
+/* Style dla aktywnego kroku */
+.stepItem.active .timelineDot {
+    background-color: var(--primary-accent);
+    /* Zmiana koloru kropki */
+    transform: scale(1.2);
+    /* Lekkie powiększenie kropki */
+}
+
+.stepItem.active .stepContent p {
+    color: var(--text-light);
+    /* Jaśniejszy tekst dla aktywnego */
+    font-weight: bold;
+    /* Pogrubienie dla aktywnego */
+}
+
+/* Responsywność (przykład) */
+@media (max-width: 768px) {
+    .contentWrapper {
+        flex-direction: column;
+        /* Układ kolumnowy na mniejszych ekranach */
+        align-items: center;
+        /* Wyśrodkuj elementy */
+    }
+
+    .imageContainer {
+        width: 100%;
+        /* Pełna szerokość */
+        max-width: 400px;
+        /* Ogranicz maksymalną szerokość */
+        height: 300px;
+        /* Mniejsza wysokość */
+        margin-bottom: 30px;
+    }
+
+    .stepsList {
+        width: 100%;
+        max-width: 400px;
+        /* Ogranicz szerokość listy */
+        padding-left: 30px;
+        /* Dostosuj padding */
+    }
+
+    .stepsList::before {
+        left: 10px;
+        /* Dostosuj pozycję linii */
+    }
+
+    .timelineDot {
+        left: -15px;
+        /* Dostosuj pozycję kropki */
+    }
+}

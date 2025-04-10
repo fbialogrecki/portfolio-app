@@ -1,0 +1,15 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #111;
+    /* Taki sam jak Contact lub ciemniejszy */
+    border-top: 1px solid #333;
+    /* Subtelna linia oddzielająca od Contact */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}

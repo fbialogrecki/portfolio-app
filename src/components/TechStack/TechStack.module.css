@@ -1,0 +1,56 @@
+/* src/components/TechStack/TechStack.module.css */
+.techStackSection {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--background-dark);
+}
+
+.title {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.logosContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Pozwala logom przechodzić do następnej linii */
+    justify-content: center;
+    /* Wyśrodkowanie logotypów */
+    gap: 30px;
+    /* Odstęp między logotypami */
+}
+
+.logoPlaceholder {
+    width: 100px;
+    /* Przykładowa szerokość */
+    height: 50px;
+    /* Przykładowa wysokość */
+    background-color: var(--card-background);
+    /* Tło placeholdera */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    /* Dodaj styl dla img, jeśli używasz obrazków */
+    /* img { max-width: 100%; height: auto; } */
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .logoPlaceholder {
+        width: 80px;
+        height: 40px;
+    }
+
+    .logosContainer {
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}

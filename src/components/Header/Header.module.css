@@ -1,0 +1,99 @@
+/* src/components/Header/Header.module.css */
+.header {
+    /* Pozycjonowanie i centrowanie "wyspy" */
+    position: fixed;
+    /* Przyklejony header */
+    top: 20px;
+    /* Odstęp od góry */
+    left: 50%;
+    /* Przesunięcie lewej krawędzi do środka */
+    transform: translateX(-50%);
+    /* Przesunięcie w lewo o połowę szerokości, aby wycentrować */
+    z-index: 1000;
+
+    /* Wygląd "wyspy" */
+    max-width: 1100px;
+    /* Maksymalna szerokość, dostosuj wg potrzeb */
+    width: 90%;
+    /* Szerokość np. 90% viewportu, ale nie więcej niż max-width */
+    background-color: var(--card-background);
+    /* Ciemniejsze tło dla odróżnienia */
+    border-radius: 12px;
+    /* Zaokrąglenie rogów */
+    padding: 10px 25px;
+    /* Wewnętrzny padding (góra/dół, lewo/prawo) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Opcjonalny cień dla efektu "pływania" */
+
+    /* Układ wewnątrz */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Usunięto: border-bottom, width: 100% */
+}
+
+.logo a {
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.1rem;
+    /* Lekko zmniejszone */
+    text-decoration: none;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+    /* Zmniejszony odstęp */
+}
+
+.navigation a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--text-light);
+}
+
+.extraIcons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Styl dla ikon-placeholderów pozostał bez zmian */
+.iconPlaceholder {
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-secondary);
+    /* Placeholder */
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Poprawki responsywności dla "wyspy" */
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+        /* Nadal ukryte, rozważ menu hamburgerowe */
+    }
+
+    .header {
+        width: 95%;
+        /* Większa szerokość na mobilnych */
+        padding: 8px 15px;
+        /* Mniejszy padding */
+        top: 10px;
+        /* Bliżej góry */
+    }
+
+    .logo a {
+        font-size: 1rem;
+    }
+}
